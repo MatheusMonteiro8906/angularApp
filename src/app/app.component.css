@@ -1,3 +1,16 @@
-* {
-    
-}
+:host {
+    font-family: "Roboto", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body{
+    background-color: #f0f8ff;
+  }
+
+  main{
+    background-color: #f0f8ff;
+  }
