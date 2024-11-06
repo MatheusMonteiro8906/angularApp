@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  HeaderItemList = [    
+    {name: 'Home', ref: "/"},
+    {name: 'Visualização de livros disponíveis', ref: "/livros"},
+    {name: 'Devolução de livros', ref: "/devolucao-livros"},
+    {name: 'Livros mais emprestados', ref: "/livros-mais-emprestados"}
+  ]
+
 }

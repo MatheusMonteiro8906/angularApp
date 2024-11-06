@@ -2,10 +2,10 @@
     <nav>
         <a href="#"><img class="logo" src="https://cdn-icons-png.freepik.com/512/9316/9316745.png" alt=""></a>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            @for (HeaderItem of HeaderItemList; track HeaderItem.name){
+                <li><a href={{HeaderItem.ref}}>{{HeaderItem.name}}</a></li>
+            }
+           
         </ul>
     </nav>
 </header>
