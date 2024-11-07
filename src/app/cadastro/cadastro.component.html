@@ -1,1 +1,17 @@
-<p>cadastro works!</p>
+<section  class="form-container">
+    <form [formGroup]="AddBookForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" formControlName="Name" placeholder="Nome" class="form-control">
+            <label for="Name">Nome</label>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="Synopsis" placeholder="Sinopse" class="form-control">
+            <label for="Synopsis">Sinopse</label>
+        </div>
+        <div class="form-group">
+            <input type="number" formControlName="Rating" placeholder="Avaliação" class="form-control" min="0" max="5">
+            <label for="Rating">Avaliação</label>
+        </div>
+        <button type="submit" class="primary-button submitButton" [disabled]="!AddBookForm.valid">Cadastrar</button>
+    </form>
+</section>

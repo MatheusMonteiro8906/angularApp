@@ -18,22 +18,3 @@
     justify-content: center;
     gap: 15px;
 }
-
-.option-button {
-    display: block;
-    padding: 15px 25px;
-    margin: 10px;
-    background-color: #8b4513;
-    color: #f0f8ff;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
-    font-family: "Roboto",'Arial', sans-serif;
-    font-size: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.option-button:hover {
-    background-color: #a0522d;
-    transform: translateY(-2px);
-}
