@@ -6,7 +6,7 @@
 
 .book-title {
     font-size: 1.2em;
-    color: #5f4b32; /* Marrom */
+    color: #5f4b32; 
     margin: 10px 0;
 }
 
@@ -21,11 +21,11 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    background-color: #e6e6fa; /* Azul claro */
+    background-color: #e6e6fa; 
 }
 
 button {
-    background-color: #5f4b32; /* Marrom */
+    background-color: #5f4b32; 
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -35,5 +35,5 @@ button {
 }
 
 button:hover {
-    background-color: #3e2c1e; /* Marrom mais escuro */
+    background-color: #3e2c1e; 
 }
