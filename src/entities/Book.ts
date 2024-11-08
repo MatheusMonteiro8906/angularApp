@@ -1,8 +1,6 @@
-export class IBook {
-    constructor(
-        public name: string,
-        public synopsis: string,
-        public rating: number,
-        public id: number,
-    ) {}
+export interface IBook {
+         name: string,
+         synopsis: string,
+         rating: number,
+         id: number,
 }

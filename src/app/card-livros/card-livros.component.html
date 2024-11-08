@@ -1,20 +1,36 @@
-<mat-card appearance="outlined">
+<mat-card appearance="outlined" class="book-item">
     <mat-card-header>
         <mat-card-title>{{book.name}}</mat-card-title>
         <mat-card-subtitle>{{book.synopsis}}</mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content>
+    <mat-card-content class="rating-row">
         <ng-container *ngFor="let stars of [].constructor(book.rating)">
-            <mat-icon aria-hidden="false" fontIcon="star" style="color: gold;"></mat-icon>
+            <mat-icon aria-hidden="false" fontIcon="star" style="color: gold;" class="rating-icon"></mat-icon>
         </ng-container>
     </mat-card-content>
     
-    <mat-card-footer>
+    <mat-card-footer class="book-footer">
         <mat-card-actions>	
-            <button class="edit-button">Editar Informação</button>
-            <button class="request-button">Solicitar Empréstimo</button>
-            <button class="remove-button">Remover</button>
+
+            <div class="button-row">
+                <div class="button-row-primary">
+                    <button mat-fab extended>
+                        <mat-icon>edit</mat-icon>
+                        Editar
+                    </button>
+                    
+                    <button mat-fab extended >
+                        <mat-icon>date_range</mat-icon>
+                        Solicitar empréstimo 
+                    </button>       
+                </div>
+                
+                <button mat-mini-fab>
+                    <mat-icon>delete</mat-icon> 
+                </button>
+            </div>
+
         </mat-card-actions>
     </mat-card-footer>
 </mat-card>

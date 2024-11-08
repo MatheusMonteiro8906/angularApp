@@ -1,18 +1,10 @@
-<!-- <section class="book-list">
-    <div class="book-card" *ngFor="let book of books">
-        <img src="path/to/generic-book-image.jpg" alt="Book Image" class="book-image">
-        <h2 class="book-title">{{ book.title }}</h2>
-        <p class="book-synopsis">{{ book.synopsis }}</p>
-        <div class="book-actions">
-            <button class="edit-button">Editar Informação</button>
-            <button class="request-button">Solicitar Empréstimo</button>
-            <button class="remove-button">Remover</button>
+<section>
+    <div class="book-list" *ngIf="bookList.length > 0, else noBooks">
+        <div *ngFor="let book of bookList" >
+            <app-card-livros [book]="book" />
         </div>
     </div>
-</section> -->
-
-<section class="book-list">
-    <div class="book-card" *ngFor="let book of AllBooks" >
-        <app-card-livros [book]="book" />
-    </div>
+    <ng-template #noBooks>
+        <p>Nenhum livro encontrado</p>
+    </ng-template>
 </section>
