@@ -8,6 +8,15 @@
     height: 100%;
 }
 
+.card-title{
+    font-size: 1.8em;
+
+}
+
+.card-subtitle {
+    font-size: 1.4em;
+}
+
 .rating-row{
     display: flex;
     justify-content: center;
@@ -15,6 +24,7 @@
     height: 100%;
     gap: 0.4rem;
     margin-top: 0.6rem;
+    padding: 0px;
     .rating-icon{
         height: 100%;
         width: max-content;
@@ -56,6 +66,15 @@
 .button-row-primary{
     gap: 10px;
     display: flex;
+}
+
+.action-button {
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+}
+
+.remove-button {
+    background-color: var(--primary-color);
 }
 
 /* 

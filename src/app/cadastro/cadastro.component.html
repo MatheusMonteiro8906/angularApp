@@ -1,17 +1,34 @@
-<section  class="form-container">
-    <form [formGroup]="AddBookForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <input type="text" formControlName="Name" placeholder="Nome" class="form-control">
-            <label for="Name">Nome</label>
-        </div>
-        <div class="form-group">
-            <input type="text" formControlName="Synopsis" placeholder="Sinopse" class="form-control">
-            <label for="Synopsis">Sinopse</label>
-        </div>
-        <div class="form-group">
-            <input type="number" formControlName="Rating" placeholder="Avaliação" class="form-control" min="0" max="5">
-            <label for="Rating">Avaliação</label>
-        </div>
-        <button type="submit" class="primary-button submitButton" [disabled]="!AddBookForm.valid">Cadastrar</button>
+<section  class="wrapper">
+    <mat-card class="main-card">
+        <mat-card-header>
+            <mat-card-title><h2 class="form-title">Cadastro de Livros</h2></mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <form [formGroup]="AddBookForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+                        <mat-label>Nome</mat-label>
+                        <input matInput placeholder="Nome" formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+                        <mat-label>Avaliação</mat-label>
+                        <input matInput placeholder="Avaliação" formControlName="rating" type="number" min="0" max="5">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+                        <mat-label >Sinopse</mat-label>
+                        <textarea matInput placeholder="Sinopse" formControlName="synopsis"> </textarea>
+                    </mat-form-field>
+                </div>
+        
+        <mat-card-footer>
+            <button type="submit" mat-flat-button class="submit-button" [disabled]="!AddBookForm.valid">Cadastrar</button>
+        </mat-card-footer>
     </form>
+</mat-card-content>
+</mat-card>        
 </section>

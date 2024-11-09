@@ -2,8 +2,9 @@
     <h1>Bem-vindo ao Sistema de Gerenciamento de Biblioteca</h1>
     <div class="options">
 
-        @for (PageItem of PageLinksList; track PageItem.name){
-            <a routerLink={{PageItem.ref}} class="primary-button">{{PageItem.name}}</a>    
+        @for (pageItem of PageLinksList; track pageItem.name){
+            <!-- <a routerLink={{PageItem.ref}} class="primary-button">{{PageItem.name}}</a>     -->
+            <a routerLink={{pageItem.ref}} mat-fab extended class="primary-button">{{pageItem.name}} </a>
         }
 <!-- 
         <a routerLink="cadastro" routerLinkActive="active" ariaCurrentWhenActive="page" class="option-button" style="cursor: pointer;">Cadastro de livros</a>

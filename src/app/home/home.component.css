@@ -18,3 +18,8 @@
     justify-content: center;
     gap: 15px;
 }
+
+.primary-button{
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+}
