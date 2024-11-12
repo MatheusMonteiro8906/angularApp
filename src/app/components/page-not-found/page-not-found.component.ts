@@ -7,9 +7,6 @@ import { Component, Renderer2, RendererFactory2, Injectable  } from '@angular/co
   templateUrl: './page-not-found.component.html',
   styleUrl: './page-not-found.component.css'
 })
-@Injectable({
-  providedIn: 'root'
-})
 
 export class PageNotFoundComponent {
 
