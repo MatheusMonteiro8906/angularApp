@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { CardLivrosComponent } from "../card-livros/card-livros.component";
-import { IBook } from '../../entities/Book';
+import { IBook } from '../../../entities/Book';
 @Component({
   selector: 'app-visualizacao-de-livros',
   standalone: true,
