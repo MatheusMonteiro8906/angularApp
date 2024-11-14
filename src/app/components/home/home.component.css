@@ -8,18 +8,22 @@
 }
 
 .home-container h1 {
+    font-size: 3rem;
+    margin-top: 4rem;
     color: #4a4a4a;
-    margin-bottom: 20px;
+    margin-bottom: 5.2rem;
 }
 
 .options {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 2rem;
 }
 
 .primary-button{
+    font-size: 1.8rem;
+    padding: 2rem;
     color: var(--primary-text-color);
     background-color: var(--primary-color);
 }

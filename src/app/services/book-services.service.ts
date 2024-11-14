@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
-import { CardLivrosComponent } from "../card-livros/card-livros.component";
+import { ApplicationConfig, Injectable } from '@angular/core';
 import { IBook } from '../../entities/Book';
-@Component({
-  selector: 'app-visualizacao-de-livros',
-  standalone: true,
-  imports: [NgFor, CardLivrosComponent, NgIf],
-  templateUrl: './visualizacao-de-livros.component.html',
-  styleUrl: './visualizacao-de-livros.component.css'
-})
-export class VisualizacaoDeLivrosComponent {
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 
-  bookList : IBook[] = [
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideHttpClient(),
+  ]
+};
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BookServicesService {
+
+  constructor(private http: HttpClient) { }
+
+   static books : IBook[] = [
     {
       name: 'O Senhor dos Anéis',
-      synopsis: 'O Senhor dos Anéis é um livro de alta fantasia escrito pelo autor britânico J. R. R. Tolkien. A história começa como sequência de um livro anterior de Tolkien, O Hobbit, e logo se desenvolve numa história muito maior.',
+      synopsis: 'O Senho  rSenhorSenhorSenhorSenhorSenhor SenhorSenhorSenhorSenhor aaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaa ddddddddddd dddddddddddd dddddddddddddd dddddddddddddd ddddddddddddddd SenhorSenhorSenhorSenhor dos Anéis é um livro de alta fantasia escrito pelo autor britânico J. R. R. Tolkien. A história começa como sequência de um livro anterior de Tolkien, O Hobbit, e logo se desenvolve numa história muito maior.',
       rating: 5,
       id: 0,
     },
@@ -42,7 +46,22 @@ export class VisualizacaoDeLivrosComponent {
       rating: 5,
       id: 0,
     },
+    {
+      name: 'O Senhor dos Anéis',
+      synopsis: 'maior.',
+      rating: 5,
+      id: 0,
+    },    {
+      name: 'O Senhor dos Anéis',
+      synopsis: 'maior.',
+      rating: 5,
+      id: 0,
+    },    {
+      name: 'O Senhor dos Anéis',
+      synopsis: 'maior.',
+      rating: 5,
+      id: 0,
+    },
   ];
-
-  constructor() {}
+  
 }

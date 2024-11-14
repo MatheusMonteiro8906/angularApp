@@ -1,0 +1,30 @@
+<section  class="wrapper">
+    <mat-card class="main-card">
+        <mat-card-title><h2 class="page-title">Registro de impréstimos</h2></mat-card-title>
+        <mat-card-header>
+            <form [formGroup]="rangeForm" class="form-group">
+                <mat-form-field class="date-picker">
+                    <mat-label>Insira um intervalo -> </mat-label>
+                    <mat-date-range-input [formGroup]="rangeForm" [rangePicker]="picker" disabled>
+                        <input matStartDate formControlName="start" placeholder="Start date" required>
+                        <input matEndDate formControlName="end" placeholder="End date" required>
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker disabled="false"></mat-date-range-picker>
+                </mat-form-field>
+                <button type="submit" mat-flat-button class="submit-button" [disabled]="!this.rangeForm.valid">Pesquisar</button>
+            </form>
+        </mat-card-header>
+        <mat-divider class="divider"/>
+        <mat-card-content>
+        <div class="book-list" *ngIf="bookList.length > 0, else noBooks">
+            <div *ngFor="let book of bookList" class="card-emprestimo">
+                <app-card-emprestimos  [book]="book" />
+            </div>
+        </div>
+        <ng-template #noBooks>
+            <p class="no-books-title">Nenhum livro encontrado!</p>
+        </ng-template>
+</mat-card-content>
+</mat-card>        
+</section>
