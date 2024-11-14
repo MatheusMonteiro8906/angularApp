@@ -1,0 +1,11 @@
+<mat-card appearance="outlined" class="book-item">
+    <mat-card-header>
+        <mat-card-title class="card-title">{{book.name}}</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">{{book.synopsis}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="rating-row">
+        <ng-container *ngFor="let stars of [].constructor(book.rating)">
+            <mat-icon aria-hidden="false" fontIcon="star" style="color: gold;" class="rating-icon"></mat-icon>
+        </ng-container>
+    </mat-card-content>

@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { IBook } from '../../../entities/Book';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-card-livros',
   standalone: true,
@@ -12,7 +13,13 @@ import { IBook } from '../../../entities/Book';
   styleUrl: './card-livros.component.css'
 })
 export class CardLivrosComponent {
-
   @Input() book!: IBook; 
+
+  private snackBar = inject(MatSnackBar);
+
+  onDelete(id : Number){
+    let snackBarRef = this.snackBar.open(`Livro ${id} apagado com sucesso!`);
+
+  }
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, RequiredValidator, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,13 +7,19 @@ import { MatInputModule } from '@angular/material/input';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
-import { range } from 'rxjs';
+import { IBook } from '../../../entities/Book';
+import { BookServicesService } from '../../services/book-services.service';
+import { CardLivrosComponent } from "../card-livros/card-livros.component";
+import { NgFor, NgIf } from '@angular/common';
+import { CardEmprestimosComponent } from "../card-emprestimos/card-emprestimos.component";
+import {MatDividerModule} from '@angular/material/divider';
+
 const MY_DATE_FORMAT = {
   parse: {
-    dateInput: 'DD/MM/YYYY', // this is how your date will be parsed from Input
+    dateInput: 'DD/MM/YYYY', 
   },
   display: {
-    dateInput: 'DD/MM/YYYY', // this is how your date will get displayed on the Input
+    dateInput: 'DD/MM/YYYY',
     monthYearLabel: 'MMMM YYYY',
     dateA11yLabel: 'LL',
     monthYearA11yLabel: 'MMMM YYYY'
@@ -22,7 +28,7 @@ const MY_DATE_FORMAT = {
 @Component({
   selector: 'app-emprestimos',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, MatDatepickerModule, MatNativeDateModule ],
+  imports: [MatDividerModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, CardLivrosComponent, NgFor, NgIf, CardEmprestimosComponent],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMAT },
@@ -31,7 +37,7 @@ const MY_DATE_FORMAT = {
   styleUrl: './emprestimos.component.css'
 })
 export class EmprestimosComponent {
-
+  
   constructor(  ) { }
 
     readonly rangeForm = new FormGroup({
@@ -39,9 +45,11 @@ export class EmprestimosComponent {
       end: new FormControl<Date | null>(null),
     });
 
+    bookList : IBook[] = BookServicesService.books;
+
     
     onsubmit() {
-      console.log(this.rangeForm.value.end)
-      console.log(this.rangeForm.value.start)
+      const teste = true;
+       const teste2 = (this.rangeForm.value as any).end._i;
     }
 }
