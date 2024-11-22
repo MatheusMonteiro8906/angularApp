@@ -1,0 +1,39 @@
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.no-books-title{
+        font-size: 22px;
+        font-weight: 600;
+}
+
+.main-card {
+    padding: 1.6rem;
+    min-height: 60vh;
+    min-width: 75vw;
+    max-width: 95vw;
+    align-items: center;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.card-emprestimo{
+    padding-top: 0.4rem;
+    max-width: 30vw;
+}
+
+.page-title{
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+}

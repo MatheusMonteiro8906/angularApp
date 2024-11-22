@@ -12,6 +12,7 @@ import { IBook } from '../../../entities/Book';
   templateUrl: './card-emprestimos.component.html',
   styleUrl: './card-emprestimos.component.css'
 })
+
 export class CardEmprestimosComponent {
   @Input() book!: IBook; 
 }

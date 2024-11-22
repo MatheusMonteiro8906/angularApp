@@ -19,6 +19,7 @@ export class HomeComponent {
     {name: 'Gerenciamento de atrasos', ref: "/gerenciamento-atrasos"},
     {name: 'Histórico de empréstimos', ref: "/historico-emprestimos"},
     {name: 'Relatórios de empréstimos por período', ref: "/relatorios-emprestimos"},
+    {name: 'Livros mais emprestados', ref: "/mais-emprestados"},
   ];
 
 }
