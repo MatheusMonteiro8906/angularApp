@@ -23,17 +23,19 @@
 .book-list {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
 }
-
-.card-emprestimo{
+.card-emprestimo {
     padding-top: 0.4rem;
-    max-width: 30vw;
+    padding-bottom: 1rem;
+    flex: 1 1 calc(33.33% - 1rem);
+    max-width: calc(33.33% - 1rem);
+    box-sizing: border-box;
 }
 
 .page-title{
     margin-bottom: 2rem;
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 500;
 }

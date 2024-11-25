@@ -3,11 +3,12 @@ import { IBook } from '../../../entities/Book';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-card-mais-emprestados',
   standalone: true,
-  imports: [MatCardModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, MatIconModule, MatButtonModule, NgClass],
   templateUrl: './card-mais-emprestados.component.html',
   styleUrl: './card-mais-emprestados.component.css'
 })
