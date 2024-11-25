@@ -13,7 +13,7 @@ export class HeaderComponent {
     {name: 'Home', ref: "/"},
     {name: 'Visualização de livros disponíveis', ref: "/livros"},
     {name: 'Devolução de livros', ref: "/devolucao-livros"},
-    {name: 'Livros mais emprestados', ref: "/livros-mais-emprestados"}
+    {name: 'Livros mais emprestados', ref: "/mais-emprestados"}
   ]
 
 }

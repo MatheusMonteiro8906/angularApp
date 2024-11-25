@@ -3,4 +3,5 @@ export interface IBook {
          synopsis: string,
          rating: number,
          id: number,
+         withdrawnCounter: number,
 }
