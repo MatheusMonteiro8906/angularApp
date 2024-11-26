@@ -11,9 +11,11 @@ export class HeaderComponent {
 
   HeaderItemList = [    
     {name: 'Home', ref: "/"},
+    {name: 'Cadastro de livros', ref: "/cadastro"},
     {name: 'Visualização de livros disponíveis', ref: "/livros"},
-    {name: 'Devolução de livros', ref: "/devolucao-livros"},
-    {name: 'Livros mais emprestados', ref: "/mais-emprestados"}
+    {name: 'Registro de membros', ref: "/registro-membros"},
+    {name: 'Empréstimos de livros', ref: "/emprestimos"},
+    {name: 'Livros mais emprestados', ref: "/mais-emprestados"},
   ]
 
 }

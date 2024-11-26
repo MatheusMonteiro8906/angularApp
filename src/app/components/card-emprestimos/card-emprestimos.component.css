@@ -43,3 +43,30 @@
     padding: 0 10px;
     margin-bottom: 10px;
 }
+
+
+.book-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #e6e6fa; 
+}
+
+.button-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.button-row-primary{
+    gap: 10px;
+    display: flex;
+}
+
+.action-button {
+    width: 85%;
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+}

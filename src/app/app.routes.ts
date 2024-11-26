@@ -5,6 +5,7 @@ import { VisualizacaoDeLivrosComponent } from './components/visualizacao-de-livr
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { EmprestimosComponent } from './components/emprestimos/emprestimos.component';
 import { MaisEmprestadosComponent } from './components/mais-emprestados/mais-emprestados.component';
+import { RegistroDeMembrosComponent } from './components/registro-de-membros/registro-de-membros.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
     {path: 'livros', component: VisualizacaoDeLivrosComponent},
     {path: 'emprestimos', component: EmprestimosComponent},
     {path: 'mais-emprestados', component: MaisEmprestadosComponent},
+    {path: 'registro-membros', component: RegistroDeMembrosComponent},
     {path: '**', component: PageNotFoundComponent},
 ];

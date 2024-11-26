@@ -1,7 +1,7 @@
 <section  class="wrapper">
     <mat-card class="main-card">
         <mat-card-header>
-            <mat-card-title><h2 class="form-title">Cadastro de livros</h2></mat-card-title>
+            <mat-card-title><h2 class="form-title">Cadastro de usuários</h2></mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
@@ -12,23 +12,22 @@
                         <input matInput placeholder="Nome" formControlName="name">
                     </mat-form-field>
                 </div>
-                <div class="form-group">
+                <div>
                     <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
-                        <mat-label>Avaliação</mat-label>
-                        <input matInput placeholder="Avaliação" formControlName="rating" type="number" min="0" max="5">
+                        <mat-label>Sobrenome</mat-label>
+                        <input matInput placeholder="Sobrenome" formControlName="lastname">
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
-                        <mat-label >Sinopse</mat-label>
-                        <textarea matInput placeholder="Sinopse" formControlName="synopsis"> </textarea>
-                    </mat-form-field>
+                        <mat-label>Idade</mat-label>
+                        <input matInput placeholder="Idade" formControlName="age" type="number" min="0" max="110">
+            </mat-form-field>
                 </div>
-        
-        <mat-card-footer>
-            <button type="submit" mat-flat-button class="submit-button" [disabled]="!AddBookForm.valid">Cadastrar</button>
-        </mat-card-footer>
-    </form>
+                <mat-card-footer>
+                  <button type="submit" mat-flat-button class="submit-button" [disabled]="!AddBookForm.valid">Cadastrar</button>
+               </mat-card-footer>
+            </form>
 </mat-card-content>
 </mat-card>        
 </section>
