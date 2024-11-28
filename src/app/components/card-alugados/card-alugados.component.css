@@ -1,4 +1,4 @@
-.book-item {
+.movie-item {
     margin-top: 10px;
     margin: 10px;
     border: 1px solid #e6e6fa;
@@ -10,7 +10,6 @@
 
 .card-title{
     font-size: 1.8em;
-
 }
 
 .card-subtitle {
@@ -32,24 +31,21 @@
     }
 }
 
-.book-footer {
-    margin-top: auto;
-}
-
-.book-title {
+.movie-title {
     font-size: 1.2em;
     color: #5f4b32; 
     margin: 10px 0;
 }
 
-.book-synopsis {
+.movie-synopsis {
     font-size: 0.9em;
     color: #333;
     padding: 0 10px;
     margin-bottom: 10px;
 }
 
-.book-actions {
+
+.movie-actions {
     display: flex;
     justify-content: space-around;
     padding: 10px;
@@ -58,7 +54,8 @@
 
 .button-row{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
     margin-bottom: 0.5rem;
 }
@@ -69,16 +66,7 @@
 }
 
 .action-button {
+    width: 85%;
     color: var(--primary-text-color);
     background-color: var(--primary-color);
 }
-
-.remove-button {
-    background-color: var(--primary-color);
-}
-
-/* 
- button {
-    background-color: #5f4b32; 
-
-} */

@@ -1,0 +1,17 @@
+<section class="wrapper">
+    <mat-card class="main-card">
+        <mat-card-header>
+            <mat-card-title><h2 class="page-title">Filmes mais alugados</h2></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="movie-list" *ngIf="movieList.length > 0; else noMovies">
+                <div *ngFor="let movie of movieList; let i = index" class="card-emprestimo">
+                    <app-card-mais-alugados [number]="i + 1" [movie]="movie"/>
+                </div>
+            </div>
+            <ng-template #noMovies>
+                <p class="no-movies-title">Nenhum livro encontrado!</p>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
+</section>

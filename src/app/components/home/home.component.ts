@@ -14,8 +14,8 @@ export class HomeComponent {
     {name: 'Cadastro de filmes', ref: "/cadastro"},
     {name: 'Visualização de filmes disponíveis', ref: "/filmes"},
     {name: 'Registro de membros', ref: "/registro-membros"},
-    {name: 'Empréstimos de filmes', ref: "/emprestimos"},
-    {name: 'Filmes mais emprestados', ref: "/mais-emprestados"},
+    {name: 'Filmes alugados', ref: "/filmes-alugados"},
+    {name: 'Filmes mais alugados', ref: "/filmes-mais-alugados"},
   ];
 
 }

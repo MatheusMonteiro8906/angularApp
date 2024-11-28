@@ -7,7 +7,7 @@
     margin: 2rem 0;
 }
 
-.no-books-title{
+.no-movies-title{
         font-size: 22px;
         font-weight: 600;
 }
@@ -36,7 +36,7 @@
     max-width: 14vw;
 }
 
-.book-list {
+.movie-list {
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;

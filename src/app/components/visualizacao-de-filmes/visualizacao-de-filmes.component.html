@@ -1,0 +1,10 @@
+<section>
+    <div class="movie-list" *ngIf="movieList.length > 0, else noMovies">
+        <div *ngFor="let movie of movieList" >
+            <app-card-filmes [movie]="movie"/>
+        </div>
+    </div>
+    <ng-template #noMovies>
+        <p class="no-movies-title">Nenhum Filme encontrado!</p>
+    </ng-template>
+</section>

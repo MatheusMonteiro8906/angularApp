@@ -20,20 +20,21 @@ export class CadastroComponent{
 
   private snackBar = inject(MatSnackBar);
 
-  AddBookForm = new FormGroup({    
+  AddMovieForm = new FormGroup({    
     name: new FormControl('', Validators.required),
     synopsis: new FormControl('', Validators.required),
     rating: new FormControl('', [Validators.required, Validators.min(0), Validators.max(5)]),
+    price: new FormControl('', [Validators.required, Validators.min(0)]),
   })
 
   onSubmit(){
-    console.log(this.AddBookForm.value);
+    console.log(this.AddMovieForm.value);
 
-    if(Number(this.AddBookForm.value.rating) == 3){
-        this.snackBar.open('Falha ao criar livro!');
+    if(Number(this.AddMovieForm.value.rating) == 3){
+        this.snackBar.open('Falha ao adicionar filme!');
     } else {
-        this.snackBar.open('Livro criado com sucesso!');
-      this._router.navigate(['livros']);
+        this.snackBar.open('Filme adicionado com sucesso!');
+      this._router.navigate(['filmes']);
     }
   }
 }

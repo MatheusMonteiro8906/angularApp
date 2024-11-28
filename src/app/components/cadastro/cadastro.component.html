@@ -1,11 +1,11 @@
 <section  class="wrapper">
     <mat-card class="main-card">
         <mat-card-header>
-            <mat-card-title><h2 class="form-title">Cadastro de livros</h2></mat-card-title>
+            <mat-card-title><h2 class="form-title">Cadastro de filmes</h2></mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
-            <form [formGroup]="AddBookForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="AddMovieForm" (ngSubmit)="onSubmit()">
                 <div>
                     <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
                         <mat-label>Nome</mat-label>
@@ -25,9 +25,15 @@
                         <textarea matInput placeholder="Sinopse" formControlName="synopsis"> </textarea>
                     </mat-form-field>
                 </div>
+                <div class="form-group">
+                    <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+                        <mat-label>Preço</mat-label>
+                        <input matInput placeholder="R$" formControlName="price" type="number" min="0">
+                    </mat-form-field>
+                </div>
         
         <mat-card-footer>
-            <button type="submit" mat-flat-button class="submit-button" [disabled]="!AddBookForm.valid">Cadastrar</button>
+            <button type="submit" mat-flat-button class="submit-button" [disabled]="!AddMovieForm.valid">Cadastrar</button>
         </mat-card-footer>
     </form>
 </mat-card-content>

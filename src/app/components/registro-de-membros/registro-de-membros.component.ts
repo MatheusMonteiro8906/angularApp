@@ -19,16 +19,16 @@ export class RegistroDeMembrosComponent {
 
   private snackBar = inject(MatSnackBar);
 
-  AddBookForm = new FormGroup({    
+  AddMovieForm = new FormGroup({    
     name: new FormControl('', Validators.required),
     lastname: new FormControl('', Validators.required),
     age: new FormControl('', [Validators.required, Validators.min(12), Validators.max(110)]),
   })
 
   onSubmit(){
-    console.log(this.AddBookForm.value);
+    console.log(this.AddMovieForm.value);
 
-    if(Number(this.AddBookForm.value.name) == 3){
+    if(Number(this.AddMovieForm.value.name) == 3){
       this.snackBar.open('Falha ao criar usuário!');
     } else {
       this.snackBar.open('Usuário criado com sucesso!');

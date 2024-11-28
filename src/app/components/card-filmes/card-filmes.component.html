@@ -1,16 +1,16 @@
-<mat-card appearance="outlined" class="book-item">
+<mat-card appearance="outlined" class="movie-item">
     <mat-card-header>
-        <mat-card-title class="card-title">{{book.name}}</mat-card-title>
-        <mat-card-subtitle class="card-subtitle">{{book.synopsis}}</mat-card-subtitle>
+        <mat-card-title class="card-title">{{movie.name}}</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">{{movie.synopsis}}</mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content class="rating-row">
-        <ng-container *ngFor="let stars of [].constructor(book.rating)">
+        <ng-container *ngFor="let stars of [].constructor(movie.rating)">
             <mat-icon aria-hidden="false" fontIcon="star" style="color: gold;" class="rating-icon"></mat-icon>
-        </ng-container>
+        </ng-container>''
     </mat-card-content>
     
-    <mat-card-footer class="book-footer">
+    <mat-card-footer class="movie-footer">
         <mat-card-actions>	
 
             <div class="button-row">
@@ -22,7 +22,7 @@
                     
                     <button mat-fab extended class="action-button">
                         <mat-icon>date_range</mat-icon>
-                        Solicitar empréstimo 
+                        Alugar filme 
                     </button>       
                 </div>
                 

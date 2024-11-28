@@ -17,13 +17,13 @@
         </mat-card-header>
         <mat-divider class="divider"/>
         <mat-card-content>
-        <div class="book-list" *ngIf="bookList.length > 0, else noBooks">
-            <div *ngFor="let book of bookList" class="card-emprestimo">
-                <app-card-emprestimos  [book]="book" />
+        <div class="movie-list" *ngIf="movieList.length > 0, else noMovies">
+            <div *ngFor="let movie of movieList" class="card-emprestimo">
+                <app-card-alugados  [movie]="movie" />
             </div>
         </div>
-        <ng-template #noBooks>
-            <p class="no-books-title">Nenhum livro encontrado!</p>
+        <ng-template #noMovies>
+            <p class="no-movies-title">Nenhum livro encontrado!</p>
         </ng-template>
 </mat-card-content>
 </mat-card>        

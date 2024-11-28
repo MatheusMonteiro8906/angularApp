@@ -1,6 +1,0 @@
-<mat-card appearance="outlined" class="book-item" [ngClass]="{'book-dourado': number === 1, 'book-prata' : number === 2, 'book-bronze' : number === 3}">
-    <mat-card-header>
-        <mat-card-title class="card-title" [ngClass]="{'texto-dourado': number === 1, 'texto-prata' : number === 2, 'texto-bronze' : number === 3}">
-            {{number}}. {{book.name}}</mat-card-title>
-        <mat-card-subtitle class="card-subtitle">Emprestado <b>{{book.withdrawnCounter}}</b> vezes</mat-card-subtitle>
-    </mat-card-header>

@@ -1,4 +1,4 @@
-.book-list {
+.movie-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 1rem; 
@@ -6,7 +6,7 @@
     margin: 2rem 0;
 }
 
-.no-books-title{
+.no-movies-title{
     padding: 16rem;
     font-size: 80px;
     font-weight: 600;

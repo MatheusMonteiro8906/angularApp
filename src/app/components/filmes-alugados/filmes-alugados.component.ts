@@ -7,12 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
-import { CardLivrosComponent } from "../card-livros/card-livros.component";
 import { NgFor, NgIf } from '@angular/common';
-import { CardEmprestimosComponent } from "../card-emprestimos/card-emprestimos.component";
 import {MatDividerModule} from '@angular/material/divider';
 import { Movie } from '../../../entities/movie';
 import { MoviesService } from '../../services/movies.service';
+import { CardAlugadosComponent } from '../card-alugados/card-alugados.component';
 
 const MY_DATE_FORMAT = {
   parse: {
@@ -25,31 +24,29 @@ const MY_DATE_FORMAT = {
     monthYearA11yLabel: 'MMMM YYYY'
   }
 };
+
 @Component({
-  selector: 'app-emprestimos',
+  selector: 'app-filmes-alugados',
   standalone: true,
-  imports: [MatDividerModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, CardLivrosComponent, NgFor, NgIf, CardEmprestimosComponent],
+  imports: [MatDividerModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, NgFor, NgIf, CardAlugadosComponent],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMAT },
-  ],
-  templateUrl: './emprestimos.component.html',
-  styleUrl: './emprestimos.component.css'
+  ],  templateUrl: './filmes-alugados.component.html',
+  styleUrl: './filmes-alugados.component.css'
 })
-export class EmprestimosComponent {
+export class FilmesAlugadosComponent {
+
+  readonly rangeForm = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
+
+  movieList : Movie[] = MoviesService.movies;
+
   
-  constructor(  ) { }
-
-    readonly rangeForm = new FormGroup({
-      start: new FormControl<Date | null>(null),
-      end: new FormControl<Date | null>(null),
-    });
-
-    movieList : Movie[] = MoviesService.movies;
-
-    
-    onsubmit() {
-      const teste = true;
-       const teste2 = (this.rangeForm.value as any).end._i;
-    }
+  onsubmit() {
+    const teste = true;
+     const teste2 = (this.rangeForm.value as any).end._i;
+  }
 }
