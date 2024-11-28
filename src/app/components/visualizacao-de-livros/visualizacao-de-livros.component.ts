@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { CardLivrosComponent } from "../card-livros/card-livros.component";
-import { IBook } from '../../../entities/Book';
-import { BookServicesService } from '../../services/book-services.service';
+import { Movie } from '../../../entities/movie';
+import { MoviesService } from '../../services/movies.service';
 @Component({
   selector: 'app-visualizacao-de-livros',
   standalone: true,
@@ -13,6 +13,6 @@ import { BookServicesService } from '../../services/book-services.service';
 export class VisualizacaoDeLivrosComponent {
   constructor() {}
 
-  bookList : IBook[] = BookServicesService.books;
+  movieList : Movie[] = MoviesService.movies;
 
 }

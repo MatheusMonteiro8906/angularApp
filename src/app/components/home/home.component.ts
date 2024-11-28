@@ -11,11 +11,11 @@ import { MatButtonModule } from '@angular/material/button';
 export class HomeComponent {
 
   PageLinksList = [
-    {name: 'Cadastro de livros', ref: "/cadastro"},
-    {name: 'Visualização de livros disponíveis', ref: "/livros"},
+    {name: 'Cadastro de filmes', ref: "/cadastro"},
+    {name: 'Visualização de filmes disponíveis', ref: "/filmes"},
     {name: 'Registro de membros', ref: "/registro-membros"},
-    {name: 'Empréstimos de livros', ref: "/emprestimos"},
-    {name: 'Livros mais emprestados', ref: "/mais-emprestados"},
+    {name: 'Empréstimos de filmes', ref: "/emprestimos"},
+    {name: 'Filmes mais emprestados', ref: "/mais-emprestados"},
   ];
 
 }

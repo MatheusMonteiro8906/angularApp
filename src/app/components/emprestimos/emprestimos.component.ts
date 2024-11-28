@@ -7,12 +7,12 @@ import { MatInputModule } from '@angular/material/input';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
-import { IBook } from '../../../entities/Book';
-import { BookServicesService } from '../../services/book-services.service';
 import { CardLivrosComponent } from "../card-livros/card-livros.component";
 import { NgFor, NgIf } from '@angular/common';
 import { CardEmprestimosComponent } from "../card-emprestimos/card-emprestimos.component";
 import {MatDividerModule} from '@angular/material/divider';
+import { Movie } from '../../../entities/movie';
+import { MoviesService } from '../../services/movies.service';
 
 const MY_DATE_FORMAT = {
   parse: {
@@ -45,7 +45,7 @@ export class EmprestimosComponent {
       end: new FormControl<Date | null>(null),
     });
 
-    bookList : IBook[] = BookServicesService.books;
+    movieList : Movie[] = MoviesService.movies;
 
     
     onsubmit() {

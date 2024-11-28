@@ -30,11 +30,10 @@ export class CadastroComponent{
     console.log(this.AddBookForm.value);
 
     if(Number(this.AddBookForm.value.rating) == 3){
-      let snackBarRef = this.snackBar.open('Falha ao criar livro!');
+        this.snackBar.open('Falha ao criar livro!');
     } else {
-      let snackBarRef = this.snackBar.open('Livro criado com sucesso!');
+        this.snackBar.open('Livro criado com sucesso!');
       this._router.navigate(['livros']);
     }
   }
-
 }

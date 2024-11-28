@@ -29,9 +29,9 @@ export class RegistroDeMembrosComponent {
     console.log(this.AddBookForm.value);
 
     if(Number(this.AddBookForm.value.name) == 3){
-      let snackBarRef = this.snackBar.open('Falha ao criar usuário!');
+      this.snackBar.open('Falha ao criar usuário!');
     } else {
-      let snackBarRef = this.snackBar.open('Usuário criado com sucesso!');
+      this.snackBar.open('Usuário criado com sucesso!');
       this._router.navigate(['/']);
     }
   }

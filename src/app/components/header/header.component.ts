@@ -11,11 +11,11 @@ export class HeaderComponent {
 
   HeaderItemList = [    
     {name: 'Home', ref: "/"},
-    {name: 'Cadastro de livros', ref: "/cadastro"},
-    {name: 'Visualização de livros disponíveis', ref: "/livros"},
+    {name: 'Cadastro de Filmes', ref: "/cadastro"},
+    {name: 'Visualização de livros disponíveis', ref: "/filmes"},
     {name: 'Registro de membros', ref: "/registro-membros"},
-    {name: 'Empréstimos de livros', ref: "/emprestimos"},
-    {name: 'Livros mais emprestados', ref: "/mais-emprestados"},
+    {name: 'Empréstimos de filmes', ref: "/emprestimos"},
+    {name: 'Filmes mais emprestados', ref: "/mais-emprestados"},
   ]
 
 }

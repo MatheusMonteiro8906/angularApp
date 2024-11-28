@@ -18,8 +18,7 @@ export class CardLivrosComponent {
   private snackBar = inject(MatSnackBar);
 
   onDelete(id : Number){
-    let snackBarRef = this.snackBar.open(`Livro ${id} apagado com sucesso!`);
-
+    this.snackBar.open(`Livro ${id} apagado com sucesso!`);
   }
 
 }
