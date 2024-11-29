@@ -70,3 +70,11 @@
     color: var(--primary-text-color);
     background-color: var(--primary-color);
 }
+
+.movie-footer{
+    p{
+        display: flex;
+        justify-content: center;
+        
+    }
+}

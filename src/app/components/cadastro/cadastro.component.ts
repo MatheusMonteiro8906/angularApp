@@ -22,7 +22,7 @@ export class CadastroComponent{
 
   AddMovieForm = new FormGroup({    
     name: new FormControl('', Validators.required),
-    synopsis: new FormControl('', Validators.required),
+    synopsis: new FormControl('', [Validators.required, Validators.minLength(20)]),
     rating: new FormControl('', [Validators.required, Validators.min(0), Validators.max(5)]),
     price: new FormControl('', [Validators.required, Validators.min(0)]),
   })

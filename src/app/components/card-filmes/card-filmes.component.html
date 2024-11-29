@@ -1,6 +1,9 @@
 <mat-card appearance="outlined" class="movie-item">
-    <mat-card-header>
-        <mat-card-title class="card-title">{{movie.name}}</mat-card-title>
+    <mat-card-header class="card-header">
+        <mat-card-title class="card-title"> 
+                <p>{{movie.name}}</p> 
+                <b>R${{movie.price.toFixed(2)}}</b>
+        </mat-card-title>
         <mat-card-subtitle class="card-subtitle">{{movie.synopsis}}</mat-card-subtitle>
     </mat-card-header>
 
@@ -12,7 +15,6 @@
     
     <mat-card-footer class="movie-footer">
         <mat-card-actions>	
-
             <div class="button-row">
                 <div class="button-row-primary">
                     <button mat-fab extended class="action-button">

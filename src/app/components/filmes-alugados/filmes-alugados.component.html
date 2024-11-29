@@ -1,6 +1,6 @@
 <section  class="wrapper">
     <mat-card class="main-card">
-        <mat-card-title><h2 class="page-title">Registro de impréstimos</h2></mat-card-title>
+        <mat-card-title><h2 class="page-title">Registro de filmes alugadosempres</h2></mat-card-title>
         <mat-card-header>
             <form [formGroup]="rangeForm" class="form-group">
                 <mat-form-field class="date-picker">
@@ -18,7 +18,7 @@
         <mat-divider class="divider"/>
         <mat-card-content>
         <div class="movie-list" *ngIf="movieList.length > 0, else noMovies">
-            <div *ngFor="let movie of movieList" class="card-emprestimo">
+            <div *ngFor="let movie of movieList" class="card-aluguel">
                 <app-card-alugados  [movie]="movie" />
             </div>
         </div>

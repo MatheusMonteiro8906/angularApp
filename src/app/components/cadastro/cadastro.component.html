@@ -22,7 +22,8 @@
                 <div>
                     <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
                         <mat-label >Sinopse</mat-label>
-                        <textarea matInput placeholder="Sinopse" formControlName="synopsis"> </textarea>
+                        <textarea matInput placeholder="Sinopse" formControlName="synopsis" minlength="20"> </textarea>
+                        <mat-hint>Mínimo de 20 caracteres.</mat-hint>
                     </mat-form-field>
                 </div>
                 <div class="form-group">
