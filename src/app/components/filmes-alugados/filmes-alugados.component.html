@@ -1,19 +1,7 @@
 <section  class="wrapper">
     <mat-card class="main-card">
-        <mat-card-title><h2 class="page-title">Registro de filmes alugadosempres</h2></mat-card-title>
         <mat-card-header>
-            <form [formGroup]="rangeForm" class="form-group">
-                <mat-form-field class="date-picker">
-                    <mat-label>Insira um intervalo -> </mat-label>
-                    <mat-date-range-input [formGroup]="rangeForm" [rangePicker]="picker" disabled>
-                        <input matStartDate formControlName="start" placeholder="Start date" required>
-                        <input matEndDate formControlName="end" placeholder="End date" required>
-                    </mat-date-range-input>
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #picker disabled="false"></mat-date-range-picker>
-                </mat-form-field>
-                <button type="submit" mat-flat-button class="submit-button" [disabled]="!this.rangeForm.valid">Pesquisar</button>
-            </form>
+            <mat-card-title><h2 class="page-title">Registro de filmes alugadosempres</h2></mat-card-title>
         </mat-card-header>
         <mat-divider class="divider"/>
         <mat-card-content>
