@@ -29,9 +29,9 @@ export class RegistroDeMembrosComponent {
     console.log(this.AddMovieForm.value);
 
     if(Number(this.AddMovieForm.value.name) == 3){
-      this.snackBar.open('Falha ao criar usuário!');
+      this.snackBar.open('Falha ao criar usuário!', '', {duration: 3000});
     } else {
-      this.snackBar.open('Usuário criado com sucesso!');
+      this.snackBar.open('Usuário criado com sucesso!', '', {duration: 3000});
       this._router.navigate(['/']);
     }
   }

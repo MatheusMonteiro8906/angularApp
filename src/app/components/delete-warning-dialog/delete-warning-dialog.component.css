@@ -1,0 +1,21 @@
+.footer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button{
+padding: 2rem;
+font-size: 1.1rem;
+}
+
+.delete-button{
+    color: red !important;
+}
+
+.title{
+    font-size: 1.6rem;
+}
+
+.subtitle{
+    font-size: 1.1rem;
+}

@@ -5,11 +5,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { DeleteWarningDialogComponent } from '../delete-warning-dialog/delete-warning-dialog.component';
 
 @Component({
   selector: 'app-card-filmes',
   standalone: true,
-  imports: [MatCardModule, MatIconModule, NgFor, MatButtonModule],
+  imports: [MatCardModule, MatIconModule, NgFor, MatButtonModule, MatDialogModule],
   templateUrl: './card-filmes.component.html',
   styleUrl: './card-filmes.component.css'
 })
@@ -17,8 +19,16 @@ export class CardFilmesComponent {
   @Input() movie!: Movie; 
 
   private snackBar = inject(MatSnackBar);
+  readonly dialog = inject(MatDialog);
 
-  onDelete(id : Number){
-    this.snackBar.open(`Filme ${id} apagado com sucesso!`);
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DeleteWarningDialogComponent, {
+      data: {id: this.movie.id, movie: this.movie.name}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

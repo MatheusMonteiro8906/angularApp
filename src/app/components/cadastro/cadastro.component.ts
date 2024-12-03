@@ -31,9 +31,9 @@ export class CadastroComponent{
     console.log(this.AddMovieForm.value);
 
     if(Number(this.AddMovieForm.value.rating) == 3){
-        this.snackBar.open('Falha ao adicionar filme!');
+        this.snackBar.open('Falha ao adicionar filme!', '', {duration: 3000});
     } else {
-        this.snackBar.open('Filme adicionado com sucesso!');
+        this.snackBar.open('Filme adicionado com sucesso!', '', {duration: 3000});
       this._router.navigate(['filmes']);
     }
   }

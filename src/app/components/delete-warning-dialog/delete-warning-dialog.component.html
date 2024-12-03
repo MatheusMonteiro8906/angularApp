@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="title">Deseja remover o filme <b>"{{data.movie}}"</b>?</h2>
+<mat-dialog-content class="subtitle">
+  <p>Ao confirmar, o filme <b>"{{data.movie}}"</b> será apagado completamente do banco de dados.</p>
+</mat-dialog-content>
+<mat-dialog-actions class="footer">
+  <button mat-button (click)="onNoClick()" class="button">Voltar</button>
+  <button mat-button (click)="onDelete()" class="delete-button button">Apagar filme</button>
+</mat-dialog-actions>
