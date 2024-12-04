@@ -4,6 +4,7 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from '@angula
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { UsersService } from '../../services/users.service';
 export interface DialogData {
   id: number;
   movie: string;
@@ -23,6 +24,7 @@ export class MovieRentDialogComponent {
   private snackBar = inject(MatSnackBar);
 
   selected = '';
+  userList = UsersService.users;
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -31,7 +33,7 @@ export class MovieRentDialogComponent {
   onConfirm(): void {
     this.dialogRef.close();
     this.snackBar.open(`Filme "${this.data.movie}" alugado com sucesso!`, '', {duration: 3000});
-    // this.selected contém valor do select
+    // TODO API
   }
 
 }

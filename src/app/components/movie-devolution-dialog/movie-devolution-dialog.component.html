@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="title">Deseja devolver o filme <b>"{{data.movie}}"</b>?</h2>
+<mat-dialog-content class="subtitle">
+  <p>Ao confirmar, o filme <b>"{{data.movie}}"</b> será marcado como disponível novamente.</p>
+</mat-dialog-content>
+<mat-dialog-actions class="footer">
+  <button mat-button (click)="onNoClick()" class="button">Voltar</button>
+  <button mat-button (click)="onConfirm()" class="devolution-button button">Devolver filme</button>
+</mat-dialog-actions>

@@ -8,14 +8,9 @@ padding: 2rem;
 font-size: 1.1rem;
 }
 
-.rent-button{
+.devolution-button{
     color: var(--primary-text-color) !important;
-    background-color: var(--primary-color);
-    
-    &:disabled{
-        color: gray !important;
-        background-color: rgba(128, 128, 128, 0.264) !important;
-    }
+    background-color: var(--primary-color) !important;
 }
 
 .title{

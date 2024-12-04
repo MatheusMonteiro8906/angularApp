@@ -3,16 +3,15 @@
     <p>Selecione o usuário que alugará o filme <b>"{{data.movie}}"</b></p>
 
     <mat-form-field>
-        <mat-label>Select an option</mat-label>
+        <mat-label>Selecione o usuário</mat-label>
         <mat-select [(value)]="selected" required>
-            <mat-option [value]="null">None</mat-option>
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2">Option 2</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
+            @for (user of userList; track user.id){
+            <mat-option value={{user.id}}>{{user.fullname}}</mat-option>
+            }
         </mat-select>
     </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions class="footer">
     <button mat-button (click)="onNoClick()" class="button">Voltar</button>
-    <button mat-button (click)="onConfirm()" class="delete-button button" [disabled]="!selected">Alugar filme</button>
+    <button mat-button (click)="onConfirm()" class="rent-button button" [disabled]="!selected">Alugar filme</button>
 </mat-dialog-actions>
