@@ -7,6 +7,7 @@ import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DeleteWarningDialogComponent } from '../delete-warning-dialog/delete-warning-dialog.component';
+import { MovieRentDialogComponent } from '../movie-rent-dialog/movie-rent-dialog.component';
 
 @Component({
   selector: 'app-card-filmes',
@@ -21,8 +22,27 @@ export class CardFilmesComponent {
   private snackBar = inject(MatSnackBar);
   readonly dialog = inject(MatDialog);
 
+  openEditDialog() {
+    const dialogRef = this.dialog.open(DeleteWarningDialogComponent, {
+      data: {id: this.movie.id, movie: this.movie.name}
+    });
 
-  openDialog() {
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openRentDialog() {
+    const dialogRef = this.dialog.open(MovieRentDialogComponent, {
+      data: {id: this.movie.id, movie: this.movie.name}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDeleteDialog() {
     const dialogRef = this.dialog.open(DeleteWarningDialogComponent, {
       data: {id: this.movie.id, movie: this.movie.name}
     });

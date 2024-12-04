@@ -17,18 +17,18 @@
         <mat-card-actions>	
             <div class="button-row">
                 <div class="button-row-primary">
-                    <button mat-fab extended class="action-button">
+                    <button mat-fab extended class="action-button" (click)="openEditDialog()">
                         <mat-icon>edit</mat-icon>
                         Editar
                     </button>
                     
-                    <button mat-fab extended class="action-button">
+                    <button mat-fab extended class="action-button" (click)="openRentDialog()">
                         <mat-icon>date_range</mat-icon>
                         Alugar filme 
                     </button>       
                 </div>
                 
-                <button mat-mini-fab color="warn" (click)="openDialog()">
+                <button mat-mini-fab color="warn" (click)="openDeleteDialog()">
                     <mat-icon>delete</mat-icon> 
                 </button>
             </div>

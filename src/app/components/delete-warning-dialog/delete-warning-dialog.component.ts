@@ -26,7 +26,7 @@ export class DeleteWarningDialogComponent {
   }
     
   onDelete(): void {
-    this.dialogRef.close(this.data.id);
+    this.dialogRef.close();
     this.snackBar.open(`Filme "${this.data.movie}" apagado com sucesso!`, '', {duration: 3000});
   }
 }

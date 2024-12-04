@@ -1,0 +1,27 @@
+.footer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button{
+padding: 2rem;
+font-size: 1.1rem;
+}
+
+.delete-button{
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+    
+    &:disabled{
+        color: gray !important;
+        background-color: rgba(128, 128, 128, 0.264) !important;
+    }
+}
+
+.title{
+    font-size: 1.6rem;
+}
+
+.subtitle{
+    font-size: 1.1rem;
+}
