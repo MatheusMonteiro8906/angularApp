@@ -1,1 +1,40 @@
-<p>movie-edit-dialog works!</p>
+<span>
+  <h2 mat-dialog-title class="title">Formulário de edição</h2>
+  <mat-dialog-content class="subtitle">
+  <form [formGroup]="EditMovieForm" (ngSubmit)="onSubmit()">
+  <p>Editar filme <b>"{{data.name}}"</b></p>
+    <div>
+        <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" formControlName="name">
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+            <mat-label>Avaliação</mat-label>
+            <input matInput placeholder="Avaliação" formControlName="rating" type="number" min="0" max="5">
+            <mat-hint>A avaliação deve ser entre 0 a 5.</mat-hint>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+            <mat-label >Sinopse</mat-label>
+            <textarea matInput placeholder="Sinopse" formControlName="synopsis" minlength="20"> </textarea>
+            <mat-hint>Mínimo de 20 caracteres.</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field appearance="fill" hideRequiredMarker class="form-input">
+            <mat-label>Preço</mat-label>
+            <input matInput placeholder="R$" formControlName="price" type="number" min="0">
+        </mat-form-field>
+    </div>
+    <mat-card-footer>
+    </mat-card-footer>
+  </form>
+  <mat-dialog-actions class="footer">
+    <button mat-button (click)="onNoClick()" class="button">Voltar</button>
+    <button mat-button type="submit" class="submit-button button" [disabled]="!EditMovieForm.valid">Editar filme</button>
+  </mat-dialog-actions>
+</mat-dialog-content>
+</span>

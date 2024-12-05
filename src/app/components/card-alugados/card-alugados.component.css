@@ -67,8 +67,8 @@
 
 .action-button {
     width: 85%;
-    color: var(--primary-text-color);
-    background-color: var(--primary-color);
+    color: var(--primary-text-color) !important;
+    background-color: var(--primary-color) !important;
 }
 
 .movie-footer{

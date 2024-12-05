@@ -24,6 +24,6 @@
 .primary-button{
     font-size: 2.5rem;
     padding: 3rem;
-    color: var(--primary-text-color);
-    background-color: var(--primary-color);
+    color: var(--primary-text-color) !important;
+    background-color: var(--primary-color) !important;
 }

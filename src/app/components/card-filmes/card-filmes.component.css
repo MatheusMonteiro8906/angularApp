@@ -79,12 +79,12 @@
 }
 
 .action-button {
-    color: var(--primary-text-color);
-    background-color: var(--primary-color);
+    color: var(--primary-text-color) !important;
+    background-color: var(--primary-color) !important;
 }
 
 .remove-button {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color) !important;
 }
 
 /* 

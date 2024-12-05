@@ -1,0 +1,57 @@
+.footer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+textarea{
+   min-height: 9rem;
+}
+
+button{
+padding: 2rem;
+font-size: 1.1rem;
+}
+
+.submit-button{
+    color: var(--primary-text-color) !important;
+    background-color: var(--primary-color) !important;
+    
+    &:disabled{
+        color: gray !important;
+        background-color: rgba(128, 128, 128, 0.264) !important;
+    }
+}
+
+.title{
+    font-size: 1.6rem;
+}
+
+.subtitle{
+    font-size: 1.1rem;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+}
+
+.main-card {
+    padding: 1.6rem;
+    min-height: 50vh;
+    min-width: 24rem;
+    align-items: center;
+}
+
+.form-input{
+    gap: 0.6rem;
+    width: 52vh;
+}
+
+.form-title{
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+}
