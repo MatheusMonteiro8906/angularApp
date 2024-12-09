@@ -21,7 +21,6 @@ export class MovieEditDialogComponent {
   private snackBar = inject(MatSnackBar);
   readonly data = inject<Movie>(MAT_DIALOG_DATA);
 
-  
   EditMovieForm = new FormGroup({    
     name: new FormControl(this.data.name, Validators.required),
     synopsis: new FormControl(this.data.synopsis, [Validators.required, Validators.minLength(20)]),
