@@ -1,14 +1,20 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Movie } from '../../entities/movie';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class MoviesService {
+  private api = environment.API_PATH;
 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  getMovies() {
+    return this.http.get<any[]>(`${this.api}`);
+  }
 
    static movies : Movie[] = [
     {
