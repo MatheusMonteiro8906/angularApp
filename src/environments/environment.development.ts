@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    API_PATH: 'https://randomuser.me/api/',
+    API_PATH: 'http://localhost:8080/',
 };

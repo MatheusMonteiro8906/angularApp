@@ -12,7 +12,19 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get<any[]>(`${this.api}`);
+    return this.http.get<User[]>(`${this.api}`);
+  }
+
+  createUser(user: User) {
+    return this.http.post(`${this.api}usuarios`, user);
+  }
+
+  searchUser(id: number) {
+    return this.http.get<User>(`${this.api}usuarios/${id}`);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(`${this.api}usuarios/${id}`);
   }
 
   static users : User[] = [

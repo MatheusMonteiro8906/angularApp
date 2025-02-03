@@ -13,10 +13,30 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   getMovies() {
-    return this.http.get<any[]>(`${this.api}`);
+    return this.http.get<Movie[]>(`${this.api}filmes`);
+  }
+  
+  getActiveMovies() {
+    return this.http.get<Movie[]>(`${this.api}filmes/disponiveis`);
   }
 
-   static movies : Movie[] = [
+  createMovie(movie: Movie) {
+    return this.http.post(`${this.api}filmes`, movie);
+  }
+  
+  updateMovie(movie: Movie) {
+    return this.http.patch(`${this.api}filmes/${movie.id}`, movie);
+  }
+
+  deleteMovie(id: number) {
+    return this.http.delete(`${this.api}filmes/${id}`);
+  }
+
+  getMovie(id: number) {
+    return this.http.get<Movie>(`${this.api}filmes/${id}`);
+  }
+
+    static movies : Movie[] = [
     {
       name: 'O Senhor dos Anéis',
       synopsis: 'O Senho  rSenhorSenhorSenhorSenhorSenhor SenhorSenhorSenhorSenhor aaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaa ddddddddddd dddddddddddd dddddddddddddd dddddddddddddd ddddddddddddddd SenhorSenhorSenhorSenhor dos Anéis é um livro de alta fantasia escrito pelo autor britânico J. R. R. Tolkien. A história começa como sequência de um livro anterior de Tolkien, O Hobbit, e logo se desenvolve numa história muito maior.',

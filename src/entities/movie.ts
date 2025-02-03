@@ -3,6 +3,7 @@ export interface Movie {
     synopsis: string,
     rating: number,
     id?: number,
-    rentCounter: number,
+    rentCounter?: number,
     price: Number,
+    rented?: boolean,
 }
