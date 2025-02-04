@@ -1,7 +1,9 @@
 <section>
-    <div class="movie-list" *ngIf="movieList.length > 0, else noMovies">
-        <div *ngFor="let movie of movieList" >
-            <app-card-filmes [movie]="movie"/>
+    <div *ngIf="(movieList | async) as movies; else noMovies" class="movie-list">
+        <div *ngIf="(movies?.length ?? 0) > 0">
+            <div *ngFor="let movie of movies">
+                <app-card-filmes [movie]="movie"/>
+            </div>
         </div>
     </div>
     <ng-template #noMovies>

@@ -1,13 +1,13 @@
-<h2 mat-dialog-title class="title">Deseja alugar o filme <b>"{{data.movie}}"</b>?</h2>
+<h2 mat-dialog-title class="title">Deseja alugar o filme <b>"{{ data.movie }}"</b>?</h2>
 <mat-dialog-content class="subtitle">
-    <p>Selecione o usuário que alugará o filme <b>"{{data.movie}}"</b></p>
+    <p>Selecione o usuário que alugará o filme <b>"{{ data.movie }}"</b></p>
 
     <mat-form-field>
         <mat-label>Selecione o usuário</mat-label>
         <mat-select [(value)]="selected" required>
-            @for (user of userList; track user.id){
-            <mat-option value={{user.id}}>{{user.fullname}}</mat-option>
-            }
+            <mat-option *ngFor="let user of userList | async" [value]="user.id">
+                {{ user.fullname }}
+            </mat-option>
         </mat-select>
     </mat-form-field>
 </mat-dialog-content>

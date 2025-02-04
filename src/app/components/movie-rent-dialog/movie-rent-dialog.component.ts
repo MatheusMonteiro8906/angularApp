@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { UsersService } from '../../services/users.service';
+import { CommonModule } from '@angular/common';
 export interface DialogData {
   id: number;
   movie: string;
@@ -13,7 +14,7 @@ export interface DialogData {
 @Component({
   selector: 'app-movie-rent-dialog',
   standalone: true,
-  imports: [MatButtonModule, MatDialogModule, MatFormFieldModule, MatSelectModule],
+  imports: [MatButtonModule, MatDialogModule, MatFormFieldModule, MatSelectModule, CommonModule],
   templateUrl: './movie-rent-dialog.component.html',
   styleUrl: './movie-rent-dialog.component.css'
 })
@@ -24,7 +25,7 @@ export class MovieRentDialogComponent {
   private snackBar = inject(MatSnackBar);
 
   selected = '';
-  userList = UsersService.users;
+  userList = UsersService.users$;
 
   onNoClick(): void {
     this.dialogRef.close();

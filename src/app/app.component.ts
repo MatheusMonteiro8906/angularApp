@@ -16,9 +16,6 @@ export class AppComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
       console.log("OnInit called")
-      this.movie.getMovies().subscribe(data => {
-          console.log(data)
-      })
   }
 
   ngAfterViewInit(): void {
