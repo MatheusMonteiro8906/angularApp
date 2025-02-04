@@ -5,7 +5,7 @@
         </mat-card-header>
         <mat-card-content>
             <div *ngIf="(movieList | async) as movies; else noMovies" class="movie-list">
-                <div *ngIf="movies && movies.length > 0">
+                <div *ngIf="(movies?.length ?? 0) > 0">
                     <div *ngFor="let movie of movies; let i = index" class="card-aluguel">
                         <app-card-mais-alugados [number]="i + 1" [movie]="movie"/>
                     </div>
