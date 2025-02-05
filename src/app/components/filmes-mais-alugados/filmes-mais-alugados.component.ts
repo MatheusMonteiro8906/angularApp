@@ -4,6 +4,7 @@ import { MoviesService } from '../../services/movies.service';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { CardMaisAlugadosComponent } from '../card-mais-alugados/card-mais-alugados.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-filmes-mais-alugados',
@@ -14,5 +15,9 @@ import { CardMaisAlugadosComponent } from '../card-mais-alugados/card-mais-aluga
 })
 
 export class FilmesMaisAlugadosComponent {
-  movieList = MoviesService.activeMovies$;
+  movieList$: Observable<Movie[]>; 
+
+  constructor(private movieService: MoviesService) {
+    this.movieList$ = this.movieService.getMostRentedMovies(); 
+  }
 }

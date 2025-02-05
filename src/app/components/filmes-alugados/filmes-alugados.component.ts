@@ -7,6 +7,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { Movie } from '../../../entities/movie';
 import { MoviesService } from '../../services/movies.service';
 import { CardAlugadosComponent } from '../card-alugados/card-alugados.component';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-filmes-alugados',
   standalone: true,
@@ -15,5 +16,8 @@ import { CardAlugadosComponent } from '../card-alugados/card-alugados.component'
   styleUrl: './filmes-alugados.component.css'
 })
 export class FilmesAlugadosComponent {
-  movieList = MoviesService.activeMovies$;
-}
+  movieList$: Observable<Movie[]>; 
+
+  constructor(private movieService: MoviesService) {
+    this.movieList$ = this.movieService.getRentedMovies(); 
+  }}

@@ -6,6 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,7 +17,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class CadastroComponent{
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private movieservice : MoviesService) { }
 
   private snackBar = inject(MatSnackBar);
 
@@ -28,13 +29,21 @@ export class CadastroComponent{
   })
 
   onSubmit(){
-    console.log(this.AddMovieForm.value);
+    const movie = { 
+      nome: this.AddMovieForm.value.name!, 
+      sinopse: this.AddMovieForm.value.synopsis!,
+      rating: Number(this.AddMovieForm.value.rating!),
+      preco: Number(this.AddMovieForm.value.price!) 
+    };
 
-    if(Number(this.AddMovieForm.value.rating) == 3){
-        this.snackBar.open('Falha ao adicionar filme!', '', {duration: 3000});
-    } else {
+    this.movieservice.createMovie(movie).subscribe({
+      next: () => {
         this.snackBar.open('Filme adicionado com sucesso!', '', {duration: 3000});
       this._router.navigate(['filmes']);
-    }
+      },
+      error: () => {
+        this.snackBar.open('Falha ao adicionar filme!', '', {duration: 3000});
+      }
+    });
   }
 }

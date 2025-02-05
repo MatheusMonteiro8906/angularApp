@@ -29,6 +29,14 @@ export class MoviesService {
     return this.http.get<Movie[]>(`${this.api}filmes/disponiveis`);
   }
 
+  getMostRentedMovies() {
+    return this.http.get<Movie[]>(`${this.api}filmes/mais-alugados`);	
+  }
+
+  getRentedMovies(){
+    return this.http.get<Movie[]>(`${this.api}filmes/emprestados`);
+  }
+
   createMovie(movie: Movie) {
     return this.http.post(`${this.api}filmes`, movie);
   }
@@ -43,6 +51,14 @@ export class MoviesService {
 
   getMovie(id: number) {
     return this.http.get<Movie>(`${this.api}filmes/${id}`);
+  }
+
+  rentMovie(id: number, userId: number) {
+    return this.http.post(`${this.api}filmes/${id}/alugar`, {userId});
+  }
+
+  ReturnMovie(id: number) {
+    return this.http.post(`${this.api}filmes/${id}/devolver`, {});
   }
 
 }

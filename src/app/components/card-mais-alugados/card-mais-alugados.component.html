@@ -1,6 +1,6 @@
 <mat-card appearance="outlined" class="movie-item" [ngClass]="{'movie-dourado': number === 1, 'movie-prata' : number === 2, 'movie-bronze' : number === 3}">
     <mat-card-header>
         <mat-card-title class="card-title" [ngClass]="{'texto-dourado': number === 1, 'texto-prata' : number === 2, 'texto-bronze' : number === 3}">
-            {{number}}. {{movie.name}}</mat-card-title>
+            {{number}}. {{movie.nome}}</mat-card-title>
         <mat-card-subtitle class="card-subtitle">Emprestado <b>{{movie.rentCounter}}</b> vezes</mat-card-subtitle>
     </mat-card-header>

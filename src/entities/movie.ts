@@ -1,9 +1,9 @@
 export interface Movie {
-    name: string,
-    synopsis: string,
+    nome: string,
+    sinopse: string,
     rating: number,
     id?: number,
     rentCounter?: number,
-    price: Number,
+    preco: Number,
     rented?: boolean,
 }

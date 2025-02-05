@@ -25,13 +25,13 @@ export class CardFilmesComponent {
 
   openEditDialog() {
     const dialogRef = this.dialog.open(MovieEditDialogComponent, {
-      data: {id: this.movie.id, name: this.movie.name, price: this.movie.price, synopsis: this.movie.synopsis, rating: this.movie.rating}
+      data: {id: this.movie.id, nome: this.movie.nome, preco: this.movie.preco, sinopse: this.movie.sinopse, rating: this.movie.rating}
     });
   }
   
   openRentDialog() {
     const dialogRef = this.dialog.open(MovieRentDialogComponent, {
-      data: {id: this.movie.id, movie: this.movie.name}
+      data: {id: this.movie.id, movie: this.movie.nome}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -41,7 +41,7 @@ export class CardFilmesComponent {
 
   openDeleteDialog() {
     const dialogRef = this.dialog.open(DeleteWarningDialogComponent, {
-      data: {id: this.movie.id, movie: this.movie.name}
+      data: {id: this.movie.id, movie: this.movie.nome}
     });
 
     dialogRef.afterClosed().subscribe(result => {

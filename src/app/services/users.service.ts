@@ -16,9 +16,7 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get<User[]>(`${this.api}usuarios`).subscribe((users) => {
-      UsersService.usersSubject.next(users);
-    });
+    return this.http.get<User[]>(`${this.api}usuarios`)
   }
 
   createUser(user: User) {

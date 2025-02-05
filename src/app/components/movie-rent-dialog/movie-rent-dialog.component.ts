@@ -6,6 +6,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { UsersService } from '../../services/users.service';
 import { CommonModule } from '@angular/common';
+import { User } from '../../../entities/user';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { MoviesService } from '../../services/movies.service';
 export interface DialogData {
   id: number;
   movie: string;
@@ -25,16 +29,29 @@ export class MovieRentDialogComponent {
   private snackBar = inject(MatSnackBar);
 
   selected = '';
-  userList = UsersService.users$;
+  userList$: Observable<User[]>; 
+  
+    constructor(private _router: Router, private movieService : MoviesService, private userService: UsersService) {
+      this.userList$ = this.userService.getUsers(); 
+    }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-    
-  onConfirm(): void {
-    this.dialogRef.close();
-    this.snackBar.open(`Filme "${this.data.movie}" alugado com sucesso!`, '', {duration: 3000});
-    // TODO API
-  }
 
+    onConfirm(): void {
+     
+      this.movieService.rentMovie(this.data.id, Number(this.selected)).subscribe({
+        next: () => {
+          this.snackBar.open(`Filme "${this.data.movie}" alugado com sucesso!`, '', {duration: 3000});
+          this._router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this._router.navigate(['/filmes']);
+          });   
+          this.dialogRef.close();
+        },
+        error: () => {
+          this.snackBar.open('Falha ao alugar Filme!', '', { duration: 3000 });
+        }
+      });
+  }
 }

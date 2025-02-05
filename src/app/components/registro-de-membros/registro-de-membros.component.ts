@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core'; 
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-registro-de-membros',
@@ -15,7 +16,7 @@ import { Router } from '@angular/router';
   styleUrl: './registro-de-membros.component.css'
 })
 export class RegistroDeMembrosComponent {
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private userService: UsersService) { }
 
   private snackBar = inject(MatSnackBar);
 
@@ -26,13 +27,20 @@ export class RegistroDeMembrosComponent {
   })
 
   onSubmit(){
-    console.log(this.AddMovieForm.value);
-
-    if(Number(this.AddMovieForm.value.name) == 3){
-      this.snackBar.open('Falha ao criar usuário!', '', {duration: 3000});
-    } else {
-      this.snackBar.open('Usuário criado com sucesso!', '', {duration: 3000});
-      this._router.navigate(['/']);
-    }
+    const user = { 
+      nome: this.AddMovieForm.value.name + " " + this.AddMovieForm.value.lastname, 
+      idade: Number(this.AddMovieForm.value.age) 
+    };
+  
+    this.userService.createUser(user).subscribe({
+      next: () => {
+        this.snackBar.open('Usuário criado com sucesso!', '', { duration: 3000 });
+        this._router.navigate(['/']);
+      },
+      error: () => {
+        this.snackBar.open('Falha ao criar usuário!', '', { duration: 3000 });
+      }
+    });
   }
+  
 }

@@ -1,6 +1,7 @@
 export interface User {
-    fullname: String,
-    age: Number,
+    nome: String,
+    idade: Number,
+    fullname?: String,
     id?: Number,
     haveActiveRent?: boolean,
 }

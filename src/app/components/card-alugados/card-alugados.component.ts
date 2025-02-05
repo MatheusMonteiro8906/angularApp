@@ -21,7 +21,7 @@ export class CardAlugadosComponent {
 
   openDevolutionDialog() {
     const dialogRef = this.dialog.open(MovieDevolutionDialogComponent, {
-      data: {id: this.movie.id, movie: this.movie.name}
+      data: {id: this.movie.id, movie: this.movie.nome}
     });
 
     dialogRef.afterClosed().subscribe(result => {
