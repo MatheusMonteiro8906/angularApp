@@ -36,6 +36,7 @@ export class MovieRentDialogComponent {
     }
 
   onNoClick(): void {
+    console.log(this.selected)
     this.dialogRef.close();
   }
 
@@ -45,7 +46,7 @@ export class MovieRentDialogComponent {
         next: () => {
           this.snackBar.open(`Filme "${this.data.movie}" alugado com sucesso!`, '', {duration: 3000});
           this._router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-            this._router.navigate(['/filmes']);
+            this._router.navigate(['/filmes-alugados']);
           });   
           this.dialogRef.close();
         },

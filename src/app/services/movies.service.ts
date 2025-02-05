@@ -34,7 +34,7 @@ export class MoviesService {
   }
 
   getRentedMovies(){
-    return this.http.get<Movie[]>(`${this.api}filmes/emprestados`);
+    return this.http.get<Movie[]>(`${this.api}filmes/alugados`);
   }
 
   createMovie(movie: Movie) {

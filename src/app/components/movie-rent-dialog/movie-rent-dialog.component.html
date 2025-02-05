@@ -5,7 +5,7 @@
     <mat-form-field>
         <mat-label>Selecione o usuário</mat-label>
         <mat-select [(value)]="selected" required>
-            <mat-option *ngFor="let user of userList$ | async" [value]="user.id">
+            <mat-option *ngFor="let user of userList$ | async" [value]="user.userId">
                 {{ user.nome }}
             </mat-option>
         </mat-select>
